@@ -11,7 +11,7 @@ class Weather():
     def weather_report(self):
         self.url = "http://api.openweathermap.org/data/2.5/weather?q="
         self.cityname = self.loc.get(1.0, END)
-        self.api_key = 'bf4764269a6343d9021dd620a5ddf903'
+        self.api_key = 'Your api key ' #generate it from openwethermap.org
         self.data = requests.get(
             self.url + self.cityname + '&appid='+ self.api_key
         ).json()
@@ -62,7 +62,6 @@ class Weather():
         self.line2.place(x=360,y=150)
         self.report = Label(self.root,text="Weather Report",fg="midnight blue",font=self.font,padx=10)
         self.report.place(x=180,y=150)
-
         self.img2= ImageTk.PhotoImage(Image.open('23648-2-weather-picture-thumb.png').resize((100,100)))
         self.image2=Label(self.root,image=self.img2)
         self.image2.place(x=23,y=180)
@@ -73,9 +72,6 @@ class Weather():
         self.image3.place(x=140,y=180)
         self.temprature = Label(self.root,text="",fg="midnight blue",font=self.font)
         self.temprature.place(x=150,y=270)
-
-
-        
         self.img4= ImageTk.PhotoImage(Image.open('humidity-25-781162.webp').resize((80,80)))
         self.image4=Label(self.root,image=self.img4)
         self.image4.place(x=260,y=180)
